@@ -16,6 +16,9 @@ const Home = () => {
 		try {
 			await axios.post(url, data);
 			console.log("Data saved successfully!");
+			setName("");
+			setEmail("");
+			setPhone("");
 
 			checkoutHandler(); // Call the payment function here
 		} catch (error) {
