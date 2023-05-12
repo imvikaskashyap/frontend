@@ -15,7 +15,7 @@ const Home = () => {
 
 		const data = { name, email, phone };
 		console.log(data);
-		const url = "https://cpdbackend.onrender.com/data";
+		const url = "https://server-payment.onrender.com/api/data";
 
 		try {
 			await axios.post(url, data);
