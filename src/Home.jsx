@@ -7,11 +7,11 @@ const Home = () => {
 	const checkoutHandler = async (amount) => {
 		const {
 			data: { key },
-		} = await axios.get("http://www.localhost:4000/api/getkey");
+		} = await axios.get("https://server-payment.onrender.com/api/getkey");
 
 		const {
 			data: { order },
-		} = await axios.post("http://localhost:4000/api/checkout", {
+		} = await axios.post("https://server-payment.onrender.com/api/checkout", {
 			amount,
 		});
 
@@ -23,7 +23,8 @@ const Home = () => {
 			description: "Learn about Stock Brokerage with Stock Zilla",
 			// image: "https://avatars.githubusercontent.com/u/25058652?v=4",
 			order_id: order.id,
-			callback_url: "http://localhost:4000/api/paymentverification",
+			callback_url:
+				"https://server-payment.onrender.com/api/paymentverification",
 			prefill: {
 				name: "Gaurav Kumar",
 				email: "gaurav.kumar@example.com",
