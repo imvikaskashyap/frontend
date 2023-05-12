@@ -8,6 +8,8 @@ const Signup = () => {
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 
+	console.log(phone);
+
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
@@ -43,24 +45,31 @@ const Signup = () => {
 						type="text"
 						onChange={(event) => setName(event.target.value)}
 						value={name}
+						required
 					/>
 					<label className="label">Email</label>
 					<input
 						className="input_row"
 						description="Email"
 						placeholder="Enter your email"
-						type="text"
+						type="email"
 						onChange={(event) => setEmail(event.target.value)}
 						value={email}
+						required
 					/>
 					<label className="label">Phone</label>
 					<input
 						className="input_row"
 						description="Phone"
 						placeholder="Enter your phone"
-						type="number"
-						onChange={(event) => setPhone(event.target.value)}
+						required
+						maxLength={10}
+						minLength={10}
 						value={phone}
+						onChange={(event) => {
+							const inputPhone = event.target.value.slice(0, 10); // Truncate the input value to 10 digits
+							setPhone(inputPhone);
+						}}
 					/>
 					<button id="button" className="btn" type="submit">
 						Register
