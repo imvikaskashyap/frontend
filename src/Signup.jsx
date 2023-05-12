@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./App.css";
 
 const Signup = () => {
 	const [name, setName] = useState("");
@@ -27,8 +28,12 @@ const Signup = () => {
 
 	return (
 		<>
-			<div id="loginform">
-				<h1 id="headerTitle">Log in</h1>
+			<div className="heading">
+				<h1>Learn about Stock Brokerage with Stock Zilla </h1>
+				<h3>Sign up for Webinars by Mr. Surendra Pratap Singh</h3>
+			</div>
+			<div className="loginform">
+				<h1 id="headerTitle">Sign Up</h1>
 				<form onSubmit={handleSubmit}>
 					<label className="label">Username</label>
 					<input
@@ -58,7 +63,7 @@ const Signup = () => {
 						value={phone}
 					/>
 					<button id="button" className="btn" type="submit">
-						Login
+						Register
 					</button>
 				</form>
 			</div>

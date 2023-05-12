@@ -14,8 +14,8 @@ html {
 	font-size: 100%;
 }
 
-#loginform {
-	width: 26vw;
+.loginform {
+	width: 30vw;
 	height: auto;
 	margin: 100px auto;
 	background-color: #ffffff;
@@ -146,4 +146,15 @@ form {
 	text-align: center;
 	padding-top: 2rem;
 	margin-top: 1.5rem;
+}
+
+@media (max-width: 767px) {
+	.loginform {
+		width: 92vw;
+	}
+}
+@media (min-width: 767px) and (max-width: 1249px) {
+	.loginform {
+		width: 40vw;
+	}
 }
