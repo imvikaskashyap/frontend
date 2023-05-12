@@ -1,4 +1,3 @@
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 const PaymentSuccess = () => {
@@ -8,9 +7,9 @@ const PaymentSuccess = () => {
 	return (
 		<div>
 			<div h="100vh" justifyContent={"center"}>
-				<h1 textTransform={"uppercase"}> Order Successfull</h1>
+				<h1 textTransform={"uppercase"}> Paid Successfully</h1>
 
-				<p>Reference No.{referenceNum}</p>
+				<p>Reference No. - {referenceNum}</p>
 			</div>
 		</div>
 	);
