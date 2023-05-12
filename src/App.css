@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
 body {
 	background: rgb(34, 193, 195);
-	background: linear-gradient(
-		135deg,
-		rgba(34, 193, 195, 1) 0%,
-		rgba(253, 187, 45, 1) 100%
-	);
+	background: linear-gradient(90deg, #650cef 0%, #8650bf 100%);
 	font-family: "work sans";
 }
 
@@ -24,6 +22,12 @@ html {
 	flex-direction: column;
 	align-items: center;
 	margin-top: 50px;
+	/* background-color: rgba(255, 255, 255, 0.06);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+	padding: 50px 25px;
+	-webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15); */
 }
 
 #headerTitle {
@@ -35,10 +39,12 @@ html {
 }
 
 .heading h1 {
+	font-family: "Varela Round", sans-serif;
 	text-align: center;
 	margin-bottom: 30px;
 }
 .heading h3 {
+	font-family: "Varela Round", sans-serif;
 	text-align: center;
 	margin-bottom: 30px;
 }
@@ -97,11 +103,7 @@ form {
 	color: white;
 	font-weight: 700;
 	background: rgb(34, 193, 195);
-	background: linear-gradient(
-		90deg,
-		rgba(34, 193, 195, 1) 0%,
-		rgba(253, 187, 45, 1) 100%
-	);
+	background: linear-gradient(90deg, #5c06e1 0%, #9434f8 100%);
 	border: 0px;
 	cursor: pointer;
 	transition: opacity 0.25s ease-out;
@@ -115,11 +117,7 @@ form {
 	color: white;
 	font-weight: 700;
 	background: rgb(34, 193, 195);
-	background: linear-gradient(
-		90deg,
-		rgba(34, 193, 195, 1) 0%,
-		rgba(253, 187, 45, 1) 100%
-	);
+	background: linear-gradient(90deg, #5c06e1 0%, #9434f8 100%);
 	border: 0px;
 	cursor: pointer;
 	transition: opacity 0.25s ease-out;
@@ -130,7 +128,7 @@ form {
 }
 
 #button {
-	padding-bottom: 1.5rem;
+	/* padding-bottom: 1.5rem; */
 	text-align: center;
 }
 
