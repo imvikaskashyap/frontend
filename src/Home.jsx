@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import LoaderFile from "./Loader";
+import emailjs from "@emailjs/browser";
 
 const Home = () => {
 	const [name, setName] = useState("");
@@ -8,29 +9,75 @@ const Home = () => {
 	const [phone, setPhone] = useState("");
 	const [loading, setLoading] = useState(false);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
+	const form = useRef();
 
+	const handleSubmit = async (event) => {
+		event.preventDefault();
 		setLoading(true);
+		//
+		// emailjs
+		// 	.sendForm(
+		// 		"service_c1n02uy",
+		// 		"template_i9oe6ui",
+		// 		form.current,
+		// 		"yC7gTteHqtdHRHDu0"
+		// 	)
+		// 	.then(
+		// 		(result) => {
+		// 			console.log(result.text);
+		// 		},
+		// 		(error) => {
+		// 			console.log(error.text);
+		// 		}
+		// 	);
 
-		const data = { name, email, phone };
+		const data = [[name, email, phone]];
+
 		console.log(data);
-		const url = "https://server-payment.onrender.com/api/data";
-
-		try {
-			await axios.post(url, data);
-			console.log("Data saved successfully!");
-			setName("");
-			setEmail("");
-			setPhone("");
-
-			checkoutHandler(); // Call the payment function here
-			// Set loading state to false after successful signup
-		} catch (error) {
-			console.error(error);
-			setLoading(false); // Set loading state to false in case of an error
-		}
+		await fetch(
+			"https://v1.nocodeapi.com/vkashyap/google_sheets/xdanYuPBQkvrwCEl?tabId=sheet1",
+			{
+				method: "POST",
+				headers: {
+					Accept: "application/json",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			}
+		).then((result) => {
+			result.json().then((res) => {
+				console.log(res);
+				setName("");
+				setEmail("");
+				setPhone("");
+				checkoutHandler();
+			});
+		});
 	};
+
+	// const handleSubmit = async (e) => {
+	// 	e.preventDefault();
+
+	// 	setLoading(true);
+
+	// 	const data = { name, email, phone };
+	// 	console.log(data);
+	// 	const url = "https://server-payment.onrender.com/api/data";
+
+	// 	try {
+	// 		await axios.post(url, data);
+	// 		console.log("Data saved successfully!");
+	// 		setName("");
+	// 		setEmail("");
+	// 		setPhone("");
+
+	// 		checkoutHandler(); // Call the payment function here
+	// 		// Set loading state to false after successful signup
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 		setLoading(false); // Set loading state to false in case of an error
+	// 	}
+	// };
 
 	const checkoutHandler = async () => {
 		const amount = 79;
